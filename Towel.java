@@ -2,7 +2,7 @@
 public class Towel {
 	private String color;
 	private Size size;
-	
+	static private int timesFolded;
 	public Towel() {
 		this.color = "синее";
 		this.size = Size.SMALL;
@@ -27,5 +27,21 @@ public class Towel {
 		} else {
 			return "маленького";
 		}
+	}
+	public void setSize(Size size) {
+		this.size = size;
+	}
+	public void cover(Human human) {
+		System.out.println("Полотенце цвета " + this.getColor() + " накрыло " + human.getName());
+	}
+	
+	public static class StoragePlace extends Place{
+		
+		public StoragePlace(String name, int timesFolded) {
+			super(name);
+			Towel.timesFolded = timesFolded;
+			System.out.println("Полотенца хранятся в месте " + this.getName() + " и сложены в " + Towel.timesFolded + " раза");
+		}
+	
 	}
 }

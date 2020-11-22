@@ -6,6 +6,5 @@ public class SecondaryPerson extends Human {
 	
 	public SecondaryPerson(String name, int age, Sex sex) {
 		super(name, age, sex);
-		
 	}
 }

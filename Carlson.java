@@ -1,5 +1,8 @@
 	class Carlson extends Human implements Hideable{
 		
+		Propeller propeller1 = new Propeller("Красный", 30);
+		Propeller propeller2 = new Propeller("Синий", 40);
+		
 		public Carlson() {
 			super();
 		}
@@ -29,5 +32,26 @@
 			else { return "плюхнулся на пол"; }
 			
 		}
+		
+		public class Propeller{
+			private String color;
+			private int power;
+			
+			public Propeller(String color, int power) {
+				this.color = color;
+				this.power = power;
+			}
+			
+			public void start() {
+				System.out.println("Карлсон завел пропеллер цвета " + color + " и мощности " + power);
+			}
+			
+			public void stop() {
+				System.out.println("Карлсон заглушил пропеллер цвета " + color + " и мощности " + power);
+			}
+			
+		}
+		
+		
 		
 	}

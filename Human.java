@@ -25,6 +25,26 @@ public abstract class Human {
 			}
 		}
 		
+		public String getHealth() {
+			if (this.sex == Sex.MALE) {
+				if (this.health == Health.HEALTHY) { return "здоров";}
+				else { return "болен";}
+			} else {
+				if (this.health == Health.HEALTHY) { return "здорова";}
+				else { return "больна";}
+			}
+		}
+		public boolean setHealth(Health health) {
+			if (this.health == health) {
+				System.out.println(this.getName() + " уже " + this.getHealth());
+				return false;
+			} else {
+				this.health = health;
+				System.out.println(this.getName() + " теперь " + this.getHealth());
+				return true;
+			}
+		}
+		
 		public String getName() { return this.name; }
 		
 		public int getAge() { return this.age; }
@@ -40,42 +60,19 @@ public abstract class Human {
 			
 		}
 		
-		public String getHealth() {
-			if (this.sex == Sex.MALE) {
-				if (this.health == Health.HEALTHY) { return "здоров";}
-				else { return "болен";}
-			} else {
-				if (this.health == Health.HEALTHY) { return "здорова";}
-				else { return "больна";}
-			}
-		}
-		
+
 		public Sex getSex() { return this.sex; }
 		
 		public boolean setStatus(Status status) {
 			
-			if (this.status == status) {
-				System.out.println(this.getName() + " уже " + this.getStringStatus());
-				return false;
-			} else {
-				this.status = status;
-				System.out.println(this.getName() + " " + this.getStringStatus());
-				return true;
-			}
+			this.status = status;
+			System.out.println(this.getName() + " " + this.getStringStatus());
+			return true;
+			
 			
 		}
 		
-		public boolean setHealth(Health health) {
-			if (this.health == health) {
-				System.out.println(this.getName() + " уже " + this.getHealth());
-				return false;
-			} else {
-				this.health = health;
-				System.out.println(this.getName() + " теперь " + this.getHealth());
-				return true;
-			}
-		}
-		
+
 		public void say(String words) {
 			if (words.length()==0) {
 				System.out.println(this.getName() + " молчит...");

@@ -7,6 +7,10 @@ public class Ghost {
 		System.out.println("Создано простое привидение");
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
 	public Ghost(String name) {
 		this.name = name;
 		System.out.println("Создано привидение по имени " + name);

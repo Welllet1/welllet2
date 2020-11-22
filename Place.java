@@ -22,13 +22,17 @@ public class Place{
 		
 		public Human[] getHumans() { return this.humans; }
 		
+		public int getFreePlace() { return this.freePlace; }
+		
+		public void updateFreePlace() { this.freePlace+=1; }
+		
 		public boolean addHuman(Human human) {
 			
-			if (this.freePlace < 3) {
+			if (this.getFreePlace() < 3) {
 				
 				this.humans[this.freePlace] = human;
 				if (!(this.humans[0].equals(human) || this.humans[1].equals(human))) {
-					this.freePlace+=1;
+					updateFreePlace();
 				}
 				return true;
 				
